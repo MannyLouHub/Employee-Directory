@@ -8,7 +8,7 @@ function EmployeeTable(props) {
           <thead className="thead-dark">
           <tr>
             <th scope="col"> Photo</th>
-            <th scope="col"> Name</th>
+            <th scope="col" onClick={props.handleOnClick}> Name</th>
             <th scope="col"> Email</th>
             <th scope="col"> Phone Number</th>
           </tr>

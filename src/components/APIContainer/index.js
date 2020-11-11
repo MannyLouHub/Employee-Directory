@@ -31,12 +31,17 @@ class APIContainer extends Component {
     this.setState({employees: employeesCopy, search:value});
   };
 
+  handleOnClick = () => {
+    const employeesCopy = [...this.originalEmployees].sort((a, b) => a.name.first.localeCompare(b.name.first));
+    this.setState({employees: employeesCopy})
+  }
+
 
   render() {
     return (
         <div>
           <Search value={this.state.search} handleInputChange={this.handleInputChange}/>
-          <EmployeeTable employees={this.state.employees}/>
+          <EmployeeTable employees={this.state.employees} handleOnClick={this.handleOnClick}/>
         </div>
     )
   }
